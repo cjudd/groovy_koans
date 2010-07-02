@@ -24,7 +24,7 @@ class TruthKoans extends Koans {
 	
 	void testNonZeroNumberIsTrue() {
 		def nonZero = 3
-		assert __
+		assert ___
 	}
 	
 	void testEmptyStringIsFalse() {
@@ -34,7 +34,7 @@ class TruthKoans extends Koans {
 	
 	void testNonEmptyStringIsTrue() {
 		def str = "Groovy Is Cool!"
-		assert __
+		assert ___
 	}
 	
 	void testEmptyCollectionIsFalse() {
@@ -44,7 +44,7 @@ class TruthKoans extends Koans {
 	
 	void testCollectionWithItemsIsTrue() {
 		def col = [1,2,3]
-		assert __
+		assert ___
 	}
 	
 	void testIteratorOnEmptyCollectionIsFalse() {
