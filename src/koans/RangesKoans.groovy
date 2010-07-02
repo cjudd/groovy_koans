@@ -45,9 +45,9 @@ class RangesKoans extends Koans {
 		def range = 'a'..'z'
 	
 		assert range instanceof Range
-		assert range.from == '__'
-		assert range[5] == '__'
-		assert range.to == '__'
+		assert range.from == __
+		assert range[5] == __
+		assert range.to == __
 	  }
 
 }

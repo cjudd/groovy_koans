@@ -4,6 +4,7 @@ import junit.framework.TestResult
 
 class Koans extends GroovyTestCase {
 	def __ = "FILL ME IN"
+	def ___
 	
 	void run(final TestResult result) {
 		super.run(result)
