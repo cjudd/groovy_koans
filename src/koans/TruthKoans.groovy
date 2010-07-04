@@ -85,4 +85,14 @@ class TruthKoans extends Koans {
 		assertEquals __, ['one':1]
 	}
 	
+	// Matchers
+	
+	void testUnMatchingMatcherForTruth() {
+		assertEquals __, 'Hello Groovy' =~ /World/
+	}
+	
+	void testMatchingMatcherForTruth() {
+		assertEquals __, 'Hello World' =~ /World/
+	}
+	
 }
