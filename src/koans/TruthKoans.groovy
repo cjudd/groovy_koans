@@ -18,83 +18,83 @@ class TruthKoans extends Koans {
 	// Boolean expressions
 	
 	void testTrueForTruth() {
-		assertTruth __, true
+		assertTruth true, true
 	}
 	
 	void testFalseForTruth() {
-		assertTruth __, false
+		assertTruth false, false
 	}
 	
 	// Objects
 	
 	void testNullForTruth() {
-		assertTruth __, null
+		assertTruth false, null
 	}
 
 	void testObjectReferencesForTruth() {
-		assertTruth __, new Object()
+		assertTruth true, new Object()
 	}
 	
 	// Numbers
 	
 	void testZeroForTruth() {
-		assertTruth __, ZERO
+		assertTruth false, ZERO
 	}
 	
 	void testNonZeroForTruth() {
-		assertTruth __, NON_ZERO
+		assertTruth true, NON_ZERO
 	}
 	
 	void testNegativeNumberForTruth() {
-		assertTruth __, NEGATIVE_NUMBER
+		assertTruth true, NEGATIVE_NUMBER
 	}
 	
 	// Strings
 	
 	void testEmptyStringForTruth() {
-		assertTruth __, EMPTY_STRING
+		assertTruth false, EMPTY_STRING
 	}
 	
 	void testNonEmptyForTruth() {
-		assertTruth __, "Groovy is cool!!!"
+		assertTruth true, "Groovy is cool!!!"
 	}
 	
 	// Collections
 	
 	void testEmptyCollectionForTruth() {
-		assertTruth __, []
+		assertTruth false, []
 	}
 	
 	void testCollectionWithItemsForTruth() {
-		assertTruth __, [1,2,3] 
+		assertTruth true, [1,2,3] 
 	}
 	
 	void testIteratorOnEmptyCollectionForTruth() {
-		assertTruth __, [].iterator()
+		assertTruth false, [].iterator()
 	}
 	
 	void testIteratorOnNonEmptyForTruth() {
-		assertTruth __, [1,2,3].iterator()
+		assertTruth true, [1,2,3].iterator()
 	}
 	
 	// Maps
 	
 	void testEmptyMapForTruth() {
-		assertTruth __, [:]
+		assertTruth false, [:]
 	}
 	
 	void testPopulatedMapForTruth() {
-		assertTruth __, ['one':1]
+		assertTruth true, ['one':1]
 	}
 	
 	// Matchers
 	
 	void testUnMatchingMatcherForTruth() {
-		assertEquals __, 'Hello Groovy' =~ /World/
+		assertTruth false, 'Hello Groovy' =~ /World/
 	}
 	
 	void testMatchingMatcherForTruth() {
-		assertEquals __, 'Hello World' =~ /World/
+		assertTruth true, 'Hello World' =~ /World/
 	}
 	
 }
