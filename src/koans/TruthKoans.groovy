@@ -15,86 +15,107 @@ class TruthKoans extends Koans {
 	public static EMPTY_STRING = ""
 	public static NEGATIVE_NUMBER = -1
 
-	// Boolean expressions
+	// Boolean expreassertTruth __ssions
 	
 	void testTrueForTruth() {
-		assertTruth true, true
+		assertTruth __, true
 	}
 	
 	void testFalseForTruth() {
-		assertTruth false, false
+		assertTruth __, false
 	}
 	
 	// Objects
 	
 	void testNullForTruth() {
-		assertTruth false, null
+		assertTruth __, null
 	}
 
 	void testObjectReferencesForTruth() {
-		assertTruth true, new Object()
+		assertTruth __, new Object()
 	}
 	
 	// Numbers
 	
 	void testZeroForTruth() {
-		assertTruth false, ZERO
+		assertTruth __, ZERO
 	}
 	
 	void testNonZeroForTruth() {
-		assertTruth true, NON_ZERO
+		assertTruth __, NON_ZERO
 	}
 	
 	void testNegativeNumberForTruth() {
-		assertTruth true, NEGATIVE_NUMBER
+		assertTruth __, NEGATIVE_NUMBER
 	}
 	
 	// Strings
 	
 	void testEmptyStringForTruth() {
-		assertTruth false, EMPTY_STRING
+		assertTruth __, EMPTY_STRING
 	}
 	
 	void testNonEmptyForTruth() {
-		assertTruth true, "Groovy is cool!!!"
+		assertTruth __, "Groovy is cool!!!"
 	}
 	
 	// Collections
 	
 	void testEmptyCollectionForTruth() {
-		assertTruth false, []
+		assertTruth __, []
 	}
 	
 	void testCollectionWithItemsForTruth() {
-		assertTruth true, [1,2,3] 
+		assertTruth __, [1,2,3] 
 	}
 	
 	void testIteratorOnEmptyCollectionForTruth() {
-		assertTruth false, [].iterator()
+		assertTruth __, [].iterator()
 	}
 	
 	void testIteratorOnNonEmptyForTruth() {
-		assertTruth true, [1,2,3].iterator()
+		assertTruth __, [1,2,3].iterator()
 	}
 	
 	// Maps
 	
 	void testEmptyMapForTruth() {
-		assertTruth false, [:]
+		assertTruth __, [:]
 	}
 	
 	void testPopulatedMapForTruth() {
-		assertTruth true, ['one':1]
+		assertTruth __, ['one':1]
 	}
 	
 	// Matchers
 	
 	void testUnMatchingMatcherForTruth() {
-		assertTruth false, 'Hello Groovy' =~ /World/
+		assertTruth __, 'Hello Groovy' =~ /World/
 	}
 	
 	void testMatchingMatcherForTruth() {
-		assertTruth true, 'Hello World' =~ /World/
+		assertTruth __, 'Hello World' =~ /World/
 	}
+	
+	// Implementing your own Groovy Truth
+	
+	void testPossitiveCustomTruth() {
+		def customTruth = new CustomTruth(truth:true);
+		assertTruth __, customTruth
+	}
+
+	void testNegativeCustomTruth() {
+		def customTruth = new CustomTruth(truth:false);
+		assertTruth __, customTruth
+	}
+	
+}
+
+class CustomTruth {
+  boolean truth
+
+  public boolean asBoolean() {
+	return truth;
+  }
 	
 }
