@@ -1,7 +1,9 @@
 package koans;
 
-/*
+/**
 * Groovy Truth
+* 
+* Instructions: Replace __ with either a true or false.
 *
 * For more information, See:
 * - http://groovy.codehaus.org/Groovy+Truth
@@ -16,73 +18,73 @@ class TruthKoans extends Koans {
 	// Boolean expressions
 	
 	void testTrueForTruth() {
-		assertEquals __, true
+		assertTruth __, true
 	}
 	
 	void testFalseForTruth() {
-		assertEquals __, false
+		assertTruth __, false
 	}
 	
 	// Objects
 	
 	void testNullForTruth() {
-		assertEquals __, null
+		assertTruth __, null
 	}
 
 	void testObjectReferencesForTruth() {
-		assertEquals __, new Object()
+		assertTruth __, new Object()
 	}
 	
 	// Numbers
 	
 	void testZeroForTruth() {
-		assertEquals __, ZERO
+		assertTruth __, ZERO
 	}
 	
 	void testNonZeroForTruth() {
-		assertEquals __, NON_ZERO
+		assertTruth __, NON_ZERO
 	}
 	
 	void testNegativeNumberForTruth() {
-		assertEquals __, NEGATIVE_NUMBER
+		assertTruth __, NEGATIVE_NUMBER
 	}
 	
 	// Strings
 	
 	void testEmptyStringForTruth() {
-		assertEquals __, EMPTY_STRING
+		assertTruth __, EMPTY_STRING
 	}
 	
 	void testNonEmptyForTruth() {
-		assertEquals __, "Groovy is cool!!!"
+		assertTruth __, "Groovy is cool!!!"
 	}
 	
 	// Collections
 	
 	void testEmptyCollectionForTruth() {
-		assertEquals __, []
+		assertTruth __, []
 	}
 	
 	void testCollectionWithItemsForTruth() {
-		assertEquals __, [1,2,3] 
+		assertTruth __, [1,2,3] 
 	}
 	
 	void testIteratorOnEmptyCollectionForTruth() {
-		assertEquals __, [].iterator()
+		assertTruth __, [].iterator()
 	}
 	
 	void testIteratorOnNonEmptyForTruth() {
-		assertEquals __, [1,2,3].iterator()
+		assertTruth __, [1,2,3].iterator()
 	}
 	
 	// Maps
 	
 	void testEmptyMapForTruth() {
-		assertEquals __, [:]
+		assertTruth __, [:]
 	}
 	
 	void testPopulatedMapForTruth() {
-		assertEquals __, ['one':1]
+		assertTruth __, ['one':1]
 	}
 	
 	// Matchers
