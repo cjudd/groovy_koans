@@ -100,22 +100,22 @@ class TruthKoans extends Koans {
 	// Implementing your own Groovy Truth
 	
 	void testPossitiveCustomTruth() {
-		def customTruth = new CustomTruth(truth:true);
+		def customTruth = new CustomTruth(value:true);
 		assertTruth __, customTruth
 	}
 
 	void testNegativeCustomTruth() {
-		def customTruth = new CustomTruth(truth:false);
+		def customTruth = new CustomTruth(value:false);
 		assertTruth __, customTruth
 	}
 	
 }
 
 class CustomTruth {
-  boolean truth
+  boolean value
 
   public boolean asBoolean() {
-	return truth;
+	return value;
   }
 	
 }
