@@ -15,7 +15,7 @@ class TruthKoans extends Koans {
 	public static EMPTY_STRING = ""
 	public static NEGATIVE_NUMBER = -1
 
-	// Boolean expreassertTruth __ssions
+	// Boolean Expressions
 	
 	void testTrueForTruth() {
 		assertTruth __, true
