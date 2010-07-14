@@ -11,6 +11,7 @@ public class AllKoans {
 		suite.addTestSuite(TruthKoans.class);
 		suite.addTestSuite(StringKoans.class);
 		suite.addTestSuite(RangesKoans.class);
+		suite.addTestSuite(CollectionsKoans.class);
 		return suite;
 	}
 
