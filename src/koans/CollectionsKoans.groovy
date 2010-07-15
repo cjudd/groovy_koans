@@ -13,8 +13,6 @@ package koans;
  * - http://groovy.codehaus.org/groovy-jdk/java/util/Set.html
  */
 class CollectionsKoans extends Koans {
-
-	public static int BEYOND_BOUNDS = 10
 	
 	void testCreateCollection() {
 		def list = []
@@ -31,20 +29,18 @@ class CollectionsKoans extends Koans {
 	
 	void testCreatingCollection() {
 		def list = ['a', 1, 'a', 'a', 2.5, 2.5f, 2.5d, 'hello', 7g, null, 9 as byte, ];
-		assert __ == list.size
+		assert __ == list.size, "collections hold multiple types"
 	}
 
 	void testAccessingCollections() {
 		def list = ['a', 'b', 'c', 'd', 'e'];
 		
-		assert __ == list.get(2)
-		assert __ == list[0]
-		assert __ == list[3]
-		assert __ == list.first()
-		assert __ == list.last()
-		assert __ == list.head()
-		assert __ == list.tail()
-		assert __ == list[BEYOND_BOUNDS]
+		assert __ == list.get(2), 'get method'
+		assert __ == list[3], 'index access'
+		assert __ == list.first(), 'first method'
+		assert __ == list.last(), 'last method'
+		assert __ == list.head(), 'head method'
+		assert __ == list.tail(), 'tail method'
 	}
 	
 	void testPopulatingCollections() {
@@ -53,30 +49,56 @@ class CollectionsKoans extends Koans {
 		list.add('b')
 		list.push('c')
 		list << 'd'
-		
-		assert [__] == list
-		
-		list[0] = 'e'
-		
-		assert [__] == list
-		
-		assert __ == list.set(2, 'f')
-        assert [__] == list
-		
-		list[BEYOND_BOUNDS] = 'g'
-		
 		assert [__] == list
 	}
+	
+	void testUpdatingCollections() {
+		def list = ['a','b','c'];
+		
+		list[0] = 'e'
+		assert ['e','b','c'] == list, 'subscript index update'
+		
+		assert 'c' == list.set(2, 'f'), 'element replacement'
+        assert [__] == list		
+	}
+		
+	void testChaninedAppending() {
+		def list = ['a']
+		
+		list << 'g' << 'h'
+		assert [__] == list
+	}
+	
+	void testAppendingLists() {
+	    def list = ['a']
+		
+		list << ['i','j']
+		assert [__] == list
+	}
+	
+	void testBeyondBounds() {
+	    int beyondBounds = 5
+		def list = ['a', 'b','c'];
+		
+		assert __ == list[beyondBounds]
+		
+		list[beyondBounds] = 'j'
+		assert [__] == list		
+	}
 
+	void testNegativeIndices() {
+		def list = ['a', 'b', 'c', 'd', 'e'];
+		
+		assert __ == list[-1], "-1 indices"
+		assert __ == list[-2], "-2 indices"
+	}
+	
     void testSlicingCollection() {
 		def list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 		
-		assert __ == list[-1]
-		assert __ == list[-2]
-		assert [__] == list[1..3]
-		assert [__] == list[2,5]
-		assert [__] == list[0,2,4]	
-		assert [__] == list[0,2,4,5..8]	
+		assert [__] == list[1..3], "range slicing"
+		assert [__] == list[0,2,4], "index slicing"	
+		assert [__] == list[0,2,4,5..8], "combination of index and range slicing"
 	}
 	
 }
