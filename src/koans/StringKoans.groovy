@@ -3,6 +3,8 @@ package koans;
 /*
 * Groovy Strings
 *
+* Instructions: Replace __ with your answer.
+*
 * For more information, See:
 * - http://groovy.codehaus.org/Strings+and+GString
 * - http://groovy.codehaus.org/JN1525-Strings
