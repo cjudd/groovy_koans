@@ -9,71 +9,70 @@ package koans;
 *
 */
 class StringKoans extends Koans {
+	public static FIRSTNAME = "Luke"
+	public static LASTNAME = 'Skywalker'
+	public static JEDIMASTER = /Yoda/
+	public static OBIWAN = """Obi-Wan
+Kenobi"""
 	
-	void testDoubleQuoteIsAString() {
-		def name = "Luke"
-		assert ___ instanceof String
+	
+	void testDoubleQuoteStringType() {
+		assertEquals __, FIRSTNAME.class.name
 	}
 	
-	void testSingleQuoteIsAString() {
-		def name = 'Luke'
-		assert ___ instanceof String
+	void testSingleQuoteStringType() {
+		assertEquals __, LASTNAME.class.name
 	}
 	
-	void testInterpolation() {
-		def name = "Luke"
-		assert __ == "Use the force ${name}"
+	void testSlashyQuoteStringType() {
+		assertEquals __, JEDIMASTER.class.name
+	}
+
+	void testMultiLineStringType() {
+		assertEquals __, OBIWAN.class.name
+	}
+
+	void testStringInterpolation() {
+		assertEquals __, "Use the force ${FIRSTNAME}"
+		assertEquals __, 'Use the force ${FIRSTNAME}'
+	    assertEquals __, /Use the force ${FIRSTNAME}/
 	}
 	
-	void testNoInterpolation() {
-		def name = "Luke"
-		assert __ == 'Use the force ${name}'
-	}
-	
-	void testInterpolatedStringIsAGString() {
-		def fName = "Luke"
-		def lName = "Skywalker"
-		def fullName = "${fName} ${lName}"
-		assert __ instanceof org.codehaus.groovy.runtime.GStringImpl
-	}
-	
-	void testGStringIsAString() {
-		def fName = "Luke"
-		def lName = "Skywalker"
-		def fullName = "${fName} ${lName}"
-		assert ___ instanceof String
-	}
-	
-	void testStringConcatenation() {
-		def fName = "Luke"
-		def lName = "Skywalker"
-		assert __ == fName + " " + lName
+	void testInterpolatedStringType() {
+		assertEquals __, "Use the force ${FIRSTNAME}".class.name
+		assertEquals __, 'Use the force ${FIRSTNAME}'.class.name
+	    assertEquals __, /Use the force ${FIRSTNAME}/.class.name
 	}
 	
 	void testMultiLineString() {
-		def name = """Luke
-		Skywalker"""
-		assert name == __
+		def name = """${FIRSTNAME}
+${LASTNAME}"""
+		assertEquals __, name
+		
+		name = """${FIRSTNAME} \
+${LASTNAME}"""
+		assertEquals __, name
 	}
 	
-	void testSlashyString() {
-		def name = /Luke/
-		assert __ == name
+	void testStringConcatenation() {
+		assertEquals __, FIRSTNAME + " " + LASTNAME
+		assertEquals __, FIRSTNAME << " " << LASTNAME
+		assertEquals __, FIRSTNAME.plus(" ").plus(LASTNAME)
 	}
 	
-	void testSlashyInterpolation() {
-		def fName = "Luke"
-		def fullName = /${fName} SkyWalker/
-		assert __ == fullName
+	void testStringMutable() {
+		assertEquals __, FIRSTNAME
+		assertEquals __, FIRSTNAME.reverse()
+		assertEquals __, FIRSTNAME
 	}
 	
-	void testStringsAreImmutable() {
-		def numbers = "1234"
-		assert __ == numbers.reverse()
-		assert __ == numbers
+	void testStringBuilderMutable(){
+		def nameSB = new StringBuilder(FIRSTNAME)
+		assertEquals __, nameSB.toString()
+		assertEquals __, nameSB.reverse().toString()
+		assertEquals __, nameSB.toString()
 	}
 	
-	// ---------------
 	
 	void testSubScriptingStrings() {
 		assert 'abcdefg'[ 3 ] == __
@@ -87,11 +86,6 @@ class StringKoans extends Koans {
 		assert 'abcdefg'.getAt( [ 1, 3..5 ] ) == __
 	}
 	
-	void testStringBuilderIsMutable(){
-		def numbersSB = new StringBuilder("1234")
-		assert __ == numbersSB.reverse().toString()
-		assert __ == numbersSB.toString()
-	}
 	
 	void testSubScriptingStringBuilder() {
 		def numbersSB = new StringBuilder("1234")
