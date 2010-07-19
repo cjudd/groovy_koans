@@ -1,1 +1,18 @@
-Groovy Koans depend on Groovy 1.7.0 or greater to run.
+Groovy Koans is a set of Koans (http://en.wikipedia.org/wiki/K%C5%8Dan) which utilized unit tests to teach the Groovy language, API and idioms.
+
+Instructions:
+
+To learn or get a better understanding of Groovy, run the koans and fix the tests that intentionally fail. Unless otherwise indicated, replace __
+with the value expected by the assert.
+
+Depdendencies:
+
+* Groovy 1.7.0 or greater - http://groovy.codehaus.org/Download
+* Java JDK 1.5.0 or greater - http://www.java.com/en/download/
+* text editor or Spring Tool Suite with Groovy support installed - http://www.springsource.com/products/sts
+
+Getting Started:
+
+1. Either clone the git://github.com/cjudd/groovy_koans.git repository or download and uncompress the source from http://github.com/cjudd/groovy_koans/archives/master.
+2. cd into the groovy_koans directory.
+3. run 'groovy AllKoans.groovy'
