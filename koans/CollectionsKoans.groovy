@@ -3,7 +3,7 @@ package koans;
 /**
  * Groovy Collections
  * 
- * Instructions: Replace __ with either a true or false.
+ * Instructions: Replace __ with your answer.
  *
  * For more information, see:
  * - http://groovy.codehaus.org/JN1015-Collections
