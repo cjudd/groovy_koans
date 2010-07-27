@@ -11,68 +11,70 @@ package koans;
 *
 */
 class StringKoans extends Koans {
-	public static FIRSTNAME = "Luke"
-	public static LASTNAME = 'Skywalker'
-	public static JEDIMASTER = /Yoda/
-	public static OBIWAN = """Obi-Wan
-Kenobi"""
 	
 	
 	void testDoubleQuoteStringType() {
-		assertEquals __, FIRSTNAME.class.name
+		assertEquals "Any ole String".class.name,  __
 	}
 	
 	void testSingleQuoteStringType() {
-		assertEquals __, LASTNAME.class.name
+		assertEquals __, 'A Single Quote String'.class.name
 	}
 	
 	void testSlashyQuoteStringType() {
-		assertEquals __, JEDIMASTER.class.name
+		assertEquals __, /A Slashy String/.class.name
 	}
 
 	void testMultiLineStringType() {
-		assertEquals __, OBIWAN.class.name
+		assertEquals __, """A Triple Quote String""".class.name
 	}
 
 	void testStringInterpolation() {
-		assertEquals __, "Use the force ${FIRSTNAME}"
-		assertEquals __, 'Use the force ${FIRSTNAME}'
-	    assertEquals __, /Use the force ${FIRSTNAME}/
+		def answer = "c"
+		assertEquals __, "ab${answer}"
+		assertEquals __, 'ab${answer}'
+	    assertEquals __, /ab${answer}/
 	}
 	
 	void testInterpolatedStringType() {
-		assertEquals __, "Use the force ${FIRSTNAME}".class.name
-		assertEquals __, 'Use the force ${FIRSTNAME}'.class.name
-	    assertEquals __, /Use the force ${FIRSTNAME}/.class.name
+		def answer = "c"
+		assertEquals __, "ab${answer}".class.name
+		assertEquals __, 'ab${answer}'.class.name
+	    assertEquals __, /ab${answer}/.class.name
 	}
 	
 	void testMultiLineString() {
-		def name = """${FIRSTNAME}
-${LASTNAME}"""
+		def myStr1 = "Stuff"
+		def myStr2 = "More Stuff"
+		def name = """${myStr1}
+${myStr2}"""
 		assertEquals __, name
 		
-		name = """${FIRSTNAME} \
-${LASTNAME}"""
+		name = """${myStr1} \
+${myStr2}"""
 		assertEquals __, name
 	}
 	
 	void testStringConcatenation() {
-		assertEquals __, FIRSTNAME + " " + LASTNAME
-		assertEquals __, FIRSTNAME << " " << LASTNAME
-		assertEquals __, FIRSTNAME.plus(" ").plus(LASTNAME)
+		def myStr1 = "ab"
+		def myStr2 = "cd"
+		assertEquals __, myStr1 + " " + myStr2
+		assertEquals __, myStr1 << " " << myStr2
+		assertEquals __, myStr1.plus(" ").plus(myStr2)
 	}
 	
 	void testStringMutable() {
-		assertEquals __, FIRSTNAME
-		assertEquals __, FIRSTNAME.reverse()
-		assertEquals __, FIRSTNAME
+		def myString = "abc"
+		assertEquals __, myString
+		assertEquals __, myString.reverse()
+		assertEquals __, myString
 	}
 	
 	void testStringBuilderMutable(){
-		def nameSB = new StringBuilder(FIRSTNAME)
-		assertEquals __, nameSB.toString()
-		assertEquals __, nameSB.reverse().toString()
-		assertEquals __, nameSB.toString()
+		def myStrBldr = new StringBuilder("abc")
+		assertEquals __, myStrBldr.toString()
+		assertEquals __, myStrBldr.reverse().toString()
+		assertEquals __, myStrBldr.toString()
 	}
 	
 	
@@ -90,16 +92,16 @@ ${LASTNAME}"""
 	
 	
 	void testSubScriptingStringBuilder() {
-		def numbersSB = new StringBuilder("1234")
-		assert __ == numbersSB[1..3]
-		assert __ == numbersSB.toString()
+		def myStrBldr = new StringBuilder("abcd")
+		assert __ == myStrBldr[1..3]
+		assert __ == myStrBldr.toString()
 	}
 	
 	void testAppendingStringBuilder() {
-		def numbersSB = new StringBuilder("12")
-		numbersSB.append "34"
-		assert __ == numbersSB.toString()
-		numbers << "56"
-		assert __ == numbersSB.toString()
+		def myStrBldr = new StringBuilder("ab")
+		myStrBldr.append "cd"
+		assert __ == myStrBldr.toString()
+		myStrBldr << "ef"
+		assert __ == myStrBldr.toString()
 	}
 }
