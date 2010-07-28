@@ -14,25 +14,30 @@ package koans;
  */
 class CollectionsKoans extends Koans {
 	
-	void testCreateCollection() {
+	void textCreateCollection() {
 		def list = []
 		assert __ == list.size
 	}
 
 	void testCollectionInterface() {
-		// [] instanceof __
+		//assert [] instanceof List
 	}
 	
-	void testCollectionType() {
+	void textCollectionType() {
 		assert __ == [].class
 	}
 	
-	void testCreatingCollection() {
+	void textInitializingCollection() {
 		def list = ['a', 1, 'a', 'a', 2.5, 2.5f, 2.5d, 'hello', 7g, null, 9 as byte, ];
-		assert __ == list.size, "collections hold multiple types"
+		assert __ == list.size, "collections hold multiple types, duplicates and can contain an extra comma"
+	}
+	
+	void textCollectionTruth() {
+		assertTruth __ ,[]
+		assertTruth __, ['a']
 	}
 
-	void testAccessingCollections() {
+	void textAccessingCollections() {
 		def list = ['a', 'b', 'c', 'd', 'e'];
 		
 		assert __ == list.get(2), 'get method'
@@ -43,16 +48,32 @@ class CollectionsKoans extends Koans {
 		assert __ == list.tail(), 'tail method'
 	}
 	
-	void testPopulatingCollections() {
+	void textAppendingCollections() {
 		def list = ['a'];
 		
 		list.add('b')
-		list.push('c')
-		list << 'd'
-		assert [__] == list
+		list.addAll(['c','d'])
+		list.push('e')
+		list << 'f'
+		assert [__] == list, "add, push and << operator"
+		
+		assert [__] == list + 'g', "+ operator"
+		
+		list += 'h'
+		assert [__] == list, "+= operator"
+	}
+
+	void testInsertIntoCollections() {
+		def list = ['a','b','c'];
+		
+		list.add(1,'d')
+		assert [__] == list, "add with index"
+		
+		list.addAll(2, ['e','f'])
+		assert [__] == list, "add all with index"
 	}
 	
-	void testUpdatingCollections() {
+	void textUpdatingCollections() {
 		def list = ['a','b','c'];
 		
 		list[0] = 'e'
@@ -62,38 +83,45 @@ class CollectionsKoans extends Koans {
         assert [__] == list		
 	}
 		
-	void testChaninedAppending() {
+	void textChaninedAppending() {
 		def list = ['a']
 		
 		list << 'g' << 'h'
 		assert [__] == list
 	}
 	
-	void testAppendingLists() {
+	void textAppendingLists() {
 	    def list = ['a']
 		
 		list << ['i','j']
 		assert [__] == list
 	}
+
+	void textFlatteningLists() {
+	    def list = [['a',['b','b']], ['c','d'], 'e'];
+		
+		assert [__] == list.flatten()
+	}
+
 	
-	void testBeyondBounds() {
+	void textBeyondBounds() {
 	    int beyondBounds = 5
 		def list = ['a', 'b','c'];
 		
-		assert __ == list[beyondBounds]
+		assert __ == list[beyondBounds], "accessing element beyond current size"
 		
 		list[beyondBounds] = 'j'
-		assert [__] == list		
+		assert [__] == list, "setting element beyond current size"
 	}
 
-	void testNegativeIndices() {
+	void textNegativeIndices() {
 		def list = ['a', 'b', 'c', 'd', 'e'];
 		
 		assert __ == list[-1], "-1 indices"
 		assert __ == list[-2], "-2 indices"
 	}
 	
-    void testSlicingCollection() {
+    void textSlicingCollection() {
 		def list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 		
 		assert [__] == list[1..3], "range slicing"
