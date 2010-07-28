@@ -19,7 +19,7 @@ class CollectionsKoans extends Koans {
 		assert __ == list.size
 	}
 
-	void xtestCollectionInterface() {
+	void testCollectionInterface() {
 		//assert [] instanceof List
 	}
 	
@@ -63,7 +63,7 @@ class CollectionsKoans extends Koans {
 		assert [__] == list, "+= operator"
 	}
 
-	void xtestInsertIntoCollections() {
+	void testInsertIntoCollections() {
 		def list = ['a','b','c'];
 		
 		list.add(1,'d')
@@ -127,6 +127,22 @@ class CollectionsKoans extends Koans {
 		assert [__] == list[1..3], "range slicing"
 		assert [__] == list[0,2,4], "index slicing"	
 		assert [__] == list[0,2,4,5..8], "combination of index and range slicing"
+	}
+	
+	void testEachClosure() {
+		def items = ""
+		
+		['a', 'b', 'c'].each{ items += "Item: $it \n" }
+
+		assert __ == items
+	}
+	
+	void testEachIndexClosure() {
+		def items = ""
+	
+		['a', 'b', 'c'].eachWithIndex{ it, i -> items += "$i: $it\n" }
+		
+		assert __ == items
 	}
 	
 }
