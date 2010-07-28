@@ -14,30 +14,30 @@ package koans;
  */
 class CollectionsKoans extends Koans {
 	
-	void textCreateCollection() {
+	void testCreateCollection() {
 		def list = []
 		assert __ == list.size
 	}
 
-	void testCollectionInterface() {
+	void xtestCollectionInterface() {
 		//assert [] instanceof List
 	}
 	
-	void textCollectionType() {
+	void testCollectionType() {
 		assert __ == [].class
 	}
 	
-	void textInitializingCollection() {
+	void testInitializingCollection() {
 		def list = ['a', 1, 'a', 'a', 2.5, 2.5f, 2.5d, 'hello', 7g, null, 9 as byte, ];
 		assert __ == list.size, "collections hold multiple types, duplicates and can contain an extra comma"
 	}
 	
-	void textCollectionTruth() {
+	void testCollectionTruth() {
 		assertTruth __ ,[]
 		assertTruth __, ['a']
 	}
 
-	void textAccessingCollections() {
+	void testAccessingCollections() {
 		def list = ['a', 'b', 'c', 'd', 'e'];
 		
 		assert __ == list.get(2), 'get method'
@@ -48,7 +48,7 @@ class CollectionsKoans extends Koans {
 		assert __ == list.tail(), 'tail method'
 	}
 	
-	void textAppendingCollections() {
+	void testAppendingCollections() {
 		def list = ['a'];
 		
 		list.add('b')
@@ -63,7 +63,7 @@ class CollectionsKoans extends Koans {
 		assert [__] == list, "+= operator"
 	}
 
-	void testInsertIntoCollections() {
+	void xtestInsertIntoCollections() {
 		def list = ['a','b','c'];
 		
 		list.add(1,'d')
@@ -73,7 +73,7 @@ class CollectionsKoans extends Koans {
 		assert [__] == list, "add all with index"
 	}
 	
-	void textUpdatingCollections() {
+	void testUpdatingCollections() {
 		def list = ['a','b','c'];
 		
 		list[0] = 'e'
@@ -83,28 +83,28 @@ class CollectionsKoans extends Koans {
         assert [__] == list		
 	}
 		
-	void textChaninedAppending() {
+	void testChaninedAppending() {
 		def list = ['a']
 		
 		list << 'g' << 'h'
 		assert [__] == list
 	}
 	
-	void textAppendingLists() {
+	void testAppendingLists() {
 	    def list = ['a']
 		
 		list << ['i','j']
 		assert [__] == list
 	}
 
-	void textFlatteningLists() {
+	void testFlatteningLists() {
 	    def list = [['a',['b','b']], ['c','d'], 'e'];
 		
 		assert [__] == list.flatten()
 	}
 
 	
-	void textBeyondBounds() {
+	void testBeyondBounds() {
 	    int beyondBounds = 5
 		def list = ['a', 'b','c'];
 		
@@ -114,14 +114,14 @@ class CollectionsKoans extends Koans {
 		assert [__] == list, "setting element beyond current size"
 	}
 
-	void textNegativeIndices() {
+	void testNegativeIndices() {
 		def list = ['a', 'b', 'c', 'd', 'e'];
 		
 		assert __ == list[-1], "-1 indices"
 		assert __ == list[-2], "-2 indices"
 	}
 	
-    void textSlicingCollection() {
+    void testSlicingCollection() {
 		def list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 		
 		assert [__] == list[1..3], "range slicing"
