@@ -7,7 +7,7 @@ package koans
 *
 * For more information, See:
 * - http://groovy.codehaus.org/Operator+Overloading
-*
+* 
 */
 class OperatorOverloadingKoans extends Koans  {
 	
