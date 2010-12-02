@@ -26,7 +26,7 @@ class Koans extends GroovyTestCase {
 		
 	}
 	
-    public static void assertTruth(Object expected, Object actual) {
+	public static void assertTruth(Object expected, Object actual) {
 		if(actual == null) {
 			assertEquals(expected, false);
 		} else {

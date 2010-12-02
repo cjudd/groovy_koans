@@ -1,5 +1,4 @@
 package koans;
-
 /**
  * Groovy Collections
  * 
@@ -80,7 +79,7 @@ class CollectionsKoans extends Koans {
 		assert ['e','b','c'] == list, 'subscript index update'
 		
 		assert 'c' == list.set(2, 'f'), 'element replacement'
-        assert [__] == list		
+		assert [__] == list
 	}
 		
 	void testChaninedAppending() {
@@ -91,21 +90,21 @@ class CollectionsKoans extends Koans {
 	}
 	
 	void testAppendingLists() {
-	    def list = ['a']
+		def list = ['a']
 		
 		list << ['i','j']
 		assert [__] == list
 	}
 
 	void testFlatteningLists() {
-	    def list = [['a',['b','b']], ['c','d'], 'e'];
+		def list = [['a',['b','b']], ['c','d'], 'e'];
 		
 		assert [__] == list.flatten()
 	}
 
 	
 	void testBeyondBounds() {
-	    int beyondBounds = 5
+		int beyondBounds = 5
 		def list = ['a', 'b','c'];
 		
 		assert __ == list[beyondBounds], "accessing element beyond current size"
@@ -121,7 +120,7 @@ class CollectionsKoans extends Koans {
 		assert __ == list[-2], "-2 indices"
 	}
 	
-    void testSlicingCollection() {
+	void testSlicingCollection() {
 		def list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 		
 		assert [__] == list[1..3], "range slicing"

@@ -112,10 +112,10 @@ class TruthKoans extends Koans {
 }
 
 class CustomTruth {
-  boolean value
+	boolean value
 
-  public boolean asBoolean() {
-	return value;
-  }
+	public boolean asBoolean() {
+		return value;
+	}
 	
 }

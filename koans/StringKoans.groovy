@@ -33,14 +33,14 @@ class StringKoans extends Koans {
 		def answer = "c"
 		assertEquals __, "ab${answer}"
 		assertEquals __, 'ab${answer}'
-	    assertEquals __, /ab${answer}/
+		assertEquals __, /ab${answer}/
 	}
 	
 	void testInterpolatedStringType() {
 		def answer = "c"
 		assertEquals __, "ab${answer}".class.name
 		assertEquals __, 'ab${answer}'.class.name
-	    assertEquals __, /ab${answer}/.class.name
+		assertEquals __, /ab${answer}/.class.name
 	}
 	
 	void testMultiLineString() {
