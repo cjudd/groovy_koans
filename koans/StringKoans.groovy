@@ -14,7 +14,7 @@ class StringKoans extends Koans {
 	
 	
 	void testDoubleQuoteStringType() {
-		assertEquals "Any ole String".class.name,  __
+		assertEquals __, "Any ole String".class.name
 	}
 	
 	void testSingleQuoteStringType() {
@@ -59,7 +59,7 @@ ${myStr2}"""
 		def myStr1 = "ab"
 		def myStr2 = "cd"
 		assertEquals __, myStr1 + " " + myStr2
-		assertEquals __, myStr1 << " " << myStr2
+		assertEquals __, (myStr1 << " " << myStr2).toString() // leftShift returns a StringBuilder
 		assertEquals __, myStr1.plus(" ").plus(myStr2)
 	}
 	
