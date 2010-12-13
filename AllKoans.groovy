@@ -9,9 +9,11 @@ public class AllKoans {
 	public static Test suite() {
 		TestSuite suite = new TestSuite("Groovy Koans");
 		suite.addTestSuite(TruthKoans.class);
-		suite.addTestSuite(StringKoans.class);
+		suite.addTestSuite(StringKoans.class);		
+		suite.addTestSuite(DateKoans.class);
 		suite.addTestSuite(RangesKoans.class);
 		suite.addTestSuite(CollectionsKoans.class);
+		suite.addTestSuite(OperatorOverloadingKoans.class);
 		return suite;
 	}
 
