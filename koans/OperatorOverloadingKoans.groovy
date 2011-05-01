@@ -210,7 +210,7 @@ switch(a) { case(b) : }	 b.isCase(a)
 	def previous() { --value }
 	def getAt(x) { value[x] }
 	def putAt(x,y) { value[x] = y}
-	def leftShift(x) { value = value << x }
+	def leftShift(x) { value = value << x as String }
 	def rightShift(x) { value = value.replace(x,"")  }
 	def isCase(x) {"switch(${value}) { case(${x}) : }"}
 	def bitwiseNegate() {value = -(~value) }
