@@ -13,6 +13,7 @@ public class AllKoans {
 		suite.addTestSuite(DateKoans.class);
 		suite.addTestSuite(RangesKoans.class);
 		suite.addTestSuite(CollectionsKoans.class);
+		suite.addTestSuite(MapKoans.class);
 		suite.addTestSuite(OperatorOverloadingKoans.class);
 		return suite;
 	}

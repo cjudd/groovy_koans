@@ -102,7 +102,6 @@ class CollectionsKoans extends Koans {
 		assert [__] == list.flatten()
 	}
 
-	
 	void testBeyondBounds() {
 		int beyondBounds = 5
 		def list = ['a', 'b','c'];
