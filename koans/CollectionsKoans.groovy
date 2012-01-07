@@ -82,7 +82,7 @@ class CollectionsKoans extends Koans {
 		assert [__] == list
 	}
 		
-	void testChaninedAppending() {
+	void testChainedAppending() {
 		def list = ['a']
 		
 		list << 'g' << 'h'
