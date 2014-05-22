@@ -82,7 +82,7 @@ class CollectionsKoans extends Koans {
 		assert [__] == list
 	}
 		
-	void testChaninedAppending() {
+	void testChainedAppending() {
 		def list = ['a']
 		
 		list << 'g' << 'h'
@@ -102,7 +102,6 @@ class CollectionsKoans extends Koans {
 		assert [__] == list.flatten()
 	}
 
-	
 	void testBeyondBounds() {
 		int beyondBounds = 5
 		def list = ['a', 'b','c'];
