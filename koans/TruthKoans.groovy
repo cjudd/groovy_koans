@@ -99,7 +99,7 @@ class TruthKoans extends Koans {
 	
 	// Implementing your own Groovy Truth
 	
-	void testPossitiveCustomTruth() {
+	void testPositiveCustomTruth() {
 		def customTruth = new CustomTruth(value:true);
 		assertTruth __, customTruth
 	}
